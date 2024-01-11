@@ -113,10 +113,11 @@
                   v-model="postChange.answerA"
                   clearable="">
                 </el-input>
-<!--                <VueVditor v-model="content" :options="options" @after="handleAfter" class="editor"></VueVditor>-->
-                <math-jax :latex="postChange.answerA" :block="true"></math-jax>
+
+<!--                <math-jax :latex="postChange.answerA" :block="true"></math-jax>-->
 <!--                <math-jax :latex="postChange.answerA" ></math-jax>-->
               </li>
+              <div v-katex="postChange.answerA"></div>
               <li>
                 <el-tag type="success">B</el-tag>
                 <el-input
@@ -124,8 +125,8 @@
                   v-model="postChange.answerB"
                   clearable="">
                 </el-input>
-
               </li>
+              <div v-katex="postChange.answerB"></div>
               <li>
                 <el-tag type="success">C</el-tag>
                 <el-input
@@ -261,7 +262,6 @@
 
 <script>
 import { MathJax } from 'mathjax-vue'
-import { VueLatex } from 'vatex'
 
 export default {
   data() {
@@ -522,9 +522,7 @@ export default {
   // name:'App',
   components: {
     MathJax,
-    VueLatex
   },
-
 
 };
 

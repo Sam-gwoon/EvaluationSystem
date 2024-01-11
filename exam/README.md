@@ -30,3 +30,15 @@ npm cache clear --force
 
 #注册表重置
 npm config set registry http://registry.npmjs.org/
+
+#There appears to be trouble with your network connection
+① 检查配置文件
+yarn config list
+② 手动更新配置文件
+yarn config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npm.taobao.org
+npm config set disturl https://npm.taobao.org/dist
+npm config set 'https://registry.npmjs.org/'
+③ 删除无用配置项
+yarn config delete 配置项名
+npm config delete 配置项名

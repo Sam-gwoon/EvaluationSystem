@@ -10,6 +10,14 @@ import 'element-ui/lib/theme-chalk/index.css'
 import VueCookies from 'vue-cookies'
 import store from '@/vuex/store'
 
+
+//-----------------------------------------------------------
+import VueKatex from 'vue-katex';
+import 'katex/dist/katex.min.css';
+Vue.use(VueKatex)
+
+//-----------------------------------------------------------
+
 //----------------------------------------------------------
 import MathJax, { initMathJax, renderByMathjax } from 'mathjax-vue'
 function onMathJaxReady() {
