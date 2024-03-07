@@ -2,9 +2,10 @@
 <template>
   <footer id="footer">
     <ul>
-      <li><a href="javascript:;">关于我们</a></li>
-      <li><a href="javascript:;">使用协议</a></li>
-      <li>@Copyright 2024. ALL Rights Reserved</li>
+<!--      <li><a href="javascript:;">关于我们</a></li>-->
+      <li><a href="javascript:;">AI人才知识能力评测系统 v1.0.3</a></li>
+      <li>Copyright © 2024 </li>
+      <li> 版权所有：人工智能教育学部</li>
     </ul>
   </footer>
 </template>

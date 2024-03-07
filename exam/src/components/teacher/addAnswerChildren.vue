@@ -17,15 +17,37 @@
               </el-option>
             </el-select>
           </li>
-          <li v-if="optionValue == '选择题'">
-            <span>所属章节：</span>
+<!--          <li v-if="optionValue == '选择题'">-->
+              <span >学科:</span>
+              <el-select v-model="postChange.level" placeholder="请选择学科" class="w150">
+                <el-option
+                  v-for="item in levels"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+<!--          </li>-->
+            <span style="position: relative; left: 30px">知识单元:
+            <el-select v-model="postChange.level" placeholder="请选择知识单元" class="w150">
+              <el-option
+                v-for="item in levels"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+              </span>
+
+            <span style="position: relative; left: 45px">知识点：
             <el-input
-              placeholder="请输入对应章节"
+              placeholder="请输入知识点"
               v-model="postChange.section"
-              class="w150"
+              style="width: 180px"
               clearable>
             </el-input>
-          </li>
+              </span>
+<!--          </li>-->
           <li v-if="optionValue == '填空题'">
             <span>所属章节：</span>
             <el-input
@@ -44,17 +66,17 @@
               clearable>
             </el-input>
           </li>
-          <li v-if="optionValue == '选择题'">
-            <span>难度等级:</span>
-            <el-select v-model="postChange.level" placeholder="选择难度等级" class="w150">
-              <el-option
-                v-for="item in levels"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
-          </li>
+<!--          <li v-if="optionValue == '选择题'">-->
+<!--            <span>认知目标:</span>-->
+<!--            <el-select v-model="postChange.level" placeholder="选择认知目标" class="w150">-->
+<!--              <el-option-->
+<!--                v-for="item in levels"-->
+<!--                :key="item.value"-->
+<!--                :label="item.label"-->
+<!--                :value="item.value">-->
+<!--              </el-option>-->
+<!--            </el-select>-->
+<!--          </li>-->
           <li v-if="optionValue == '填空题'">
             <span>难度等级:</span>
             <el-select v-model="postFill.level" placeholder="选择难度等级" class="w150">
@@ -77,22 +99,12 @@
               </el-option>
             </el-select>
           </li>
-          <li v-if="optionValue == '选择题'">
-            <span>正确选项:</span>
-            <el-select v-model="postChange.rightAnswer" placeholder="选择正确答案" class="w150">
-              <el-option
-                v-for="item in rights"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
-          </li>
+
         </ul>
         <!-- 选择题部分 -->
         <div class="change" v-if="optionValue == '选择题'">
           <div class="title">
-            <el-tag>题目:</el-tag><span>在下面的输入框中输入题目,形如--DNS 服务器和DHCP服务器的作用是（）</span>
+            <el-tag>题目:</el-tag><span>在下面的输入框中输入题目.<br/>如：为什么RNN（递归神经网络）被用于机器翻译，比如说将英语翻译成法语？（）</span>
             <el-input
               type="textarea"
               rows="4"
@@ -102,6 +114,20 @@
               class="answer">
             </el-input>
           </div>
+
+          <el-button type="plain"  >添加图片</el-button>
+            <span style="position: relative; left: 35px" >正确选项:
+            <el-select v-model="postChange.rightAnswer" placeholder="选择正确答案" class="w150">
+              <el-option
+                v-for="item in rights"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+              </span>
+
+
           <div class="options">
             <ul>
               <li>
@@ -227,7 +253,7 @@
       </section>
     </el-tab-pane>
     <el-tab-pane name="second">
-      <span slot="label"><i class="iconfont icon-daoru-tianchong"></i>在线组卷</span>
+      <span slot="label"><i class="iconfont icon-daoru-tianchong"></i>一键导入</span>
       <div class="box">
         <ul>
           <li>
@@ -628,6 +654,9 @@ export default {
     }
     .w150 {
       width: 150px;
+    }
+    .w140 {
+      width: 140px;
     }
     li:nth-child(2) {
       display: flex;

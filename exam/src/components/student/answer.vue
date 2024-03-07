@@ -68,7 +68,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="final" @click="commit()">结束考试</div>
+              <div class="final" @click="commit()">结束评测</div>
             </div>
           </div>
         </transition>
@@ -84,10 +84,10 @@
             <p class="topic"><span class="number">{{number}}</span>{{showQuestion}}</p>
             <div v-if="currentType == 1">
               <el-radio-group v-model="radio[index]" @change="getChangeLabel" >
-                <el-radio :label="1" >A<div v-katex="showAnswer.answerA"></div></el-radio>
-                <el-radio :label="2" >B<div v-katex="showAnswer.answerB"></div></el-radio>
-                <el-radio :label="3" >C<div v-katex="showAnswer.answerC"></div></el-radio>
-                <el-radio :label="4" >D<div v-katex="showAnswer.answerD"></div></el-radio>
+                <el-radio :label="1" >A.  <span v-katex="showAnswer.answerA"></span></el-radio>
+                <el-radio :label="2" >B.  <span v-katex="showAnswer.answerB"></span></el-radio>
+                <el-radio :label="3" >C.  <span v-katex="showAnswer.answerC"></span></el-radio>
+                <el-radio :label="4" >D.  <span v-katex="showAnswer.answerD"></span></el-radio>
               </el-radio-group>
 
               <div class="analysis" v-if="isPractice">
@@ -131,7 +131,9 @@
           <div class="operation">
             <ul class="end">
               <li @click="previous()"><i class="iconfont icon-previous"></i><span>上一题</span></li>
+<!--              <li @click="mark()"><i class="iconfont icon-mark-o"></i><span>标记</span></li>-->
               <li @click="mark()"><i class="iconfont icon-mark-o"></i><span>标记</span></li>
+
               <li @click="next()"><span>下一题</span><i class="iconfont icon-next"></i></li>
             </ul>
           </div>

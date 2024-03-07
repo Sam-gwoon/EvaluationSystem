@@ -5,7 +5,7 @@
     <el-row class="main-container">
       <el-col :lg="8" :xs="16" :md="10" :span="10">
         <div class="top">
-          <i class="iconfont icon-kaoshi"></i><span class="title">在线考试系统</span>
+          <i class="iconfont icon-kaoshi1"></i><span class="title">AI人才知识能力评测</span>
         </div>
         <div class="bottom">
           <div class="container">
@@ -20,13 +20,13 @@
               <div class="submit">
                 <el-button type="primary" class="row-login" @click="login()">登录</el-button>
               </div>
-<!--              <div class="options">-->
-<!--                <p class="find"><a href="javascript:;">找回密码</a></p>-->
-<!--                <div class="register">-->
-<!--                  <span>没有账号?</span>-->
-<!--                  <span><a href="javascript:;">去注册</a></span>-->
-<!--                </div>-->
-<!--              </div>-->
+              <div class="options">
+                <p class="find"><a href="javascript:;">找回密码</a></p>
+                <div class="register">
+                  <span>没有账号?</span>
+                  <span><a href="javascript:;">去注册</a></span>
+                </div>
+              </div>
             </el-form>
           </div>
         </div>
@@ -145,7 +145,7 @@ a:link {
   overflow-y: auto;
   height: 100%;
   background: url('../../assets/img/loginbg.png')center top / cover no-repeat;
-  background-color: #b6bccdd1 !important;
+  background-color: #50999a3b !important;
 }
 #login .main-container {
   display: flex;
@@ -155,11 +155,11 @@ a:link {
 #login .main-container .top {
   margin-top: 100px;
   font-size: 30px;
-  color: #ff962a;
+  color: #001757;
   display: flex;
   justify-content: center;
 }
-#login .top .icon-kaoshi {
+#login .top .icon-kaoshi1 {
   font-size: 80px;
 }
 #login .top .title {

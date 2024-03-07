@@ -2,18 +2,18 @@
 <template>
   <div id="msg">
     <div class="title">
-      <span>试卷列表</span>
+      <span>评测列表</span>
       <span>/  {{examData.source}}</span>
     </div>
     <div class="wrapper">
       <ul class="top">
         <li class="example">{{examData.source}}</li>
-        <li><i class="iconfont icon-pen-"></i></li>
+<!--        <li><i class="iconfont icon-pen-"></i></li>-->
         <li><i class="iconfont icon-share"></i></li>
         <li class="right">
           <div>
-            <span class="count">总分</span>
-            <span class="score">{{score[0]+score[1]+score[2]}}</span>
+            <span class="count">已评测</span>
+<!--            <span class="score">{{examData.examDate}}</span>-->
           </div>
         </li>
       </ul>
@@ -24,53 +24,60 @@
         <li class="right"><el-button @click="toAnswer(examData.examCode)">开始答题</el-button></li>
       </ul>
       <ul class="info">
-        <li @click="dialogVisible = true"><a href="javascript:;"><i class="iconfont icon-info"></i>考生须知</a></li>
+        <li @click="dialogVisible = true"><a href="javascript:;"><i class="iconfont icon-info"></i>评测须知</a></li>
       </ul>
     </div>
     <div class="content">
       <el-collapse v-model="activeName" >
         <el-collapse-item class="header" name="0">
           <template slot="title" class="stitle" >
-            <div class="title">
-              <span>{{examData.source}}</span><i class="header-icon el-icon-info"></i>
-              <span class="time">{{examData.totalScore}}分 / {{examData.totalTime}}分钟</span>
+            <div class="title" style="justify-content: space-around;width: 100%">
+              <span>{{examData.source}}<i class="header-icon el-icon-info"></i></span>
+<!--              <span class="time">{{examData.totalScore}}分 / {{examData.totalTime}}分钟</span>-->
+              <span class="time">总时长：{{examData.totalTime}}分钟</span>
               <el-button type="primary" size="small">点击查看试题详情</el-button>
             </div>
           </template>
           <el-collapse class="inner">
             <el-collapse-item>
               <template slot="title" name="1">
-                <div class="titlei">选择题 (共{{topicCount[0]}}题 共计{{score[0]}}分)</div>
+<!--                <div class="titlei">选择题 (共{{topicCount[0]}}题 共计{{score[0]}}分)</div>-->
+                <div class="titlei">选择题 (共{{topicCount[0]}}题)</div>
               </template>
               <div class="contenti">
                 <ul class="question" v-for="(list, index) in topic[1]" :key="index">
-                  <li>{{index+1}}. {{list.question}} {{list.score}}分</li>
+<!--                  <li>{{index+1}}. {{list.question}} {{list.score}}分</li>-->
+                  <li>{{index+1}}. {{list.question}} </li>
                 </ul>
               </div>
             </el-collapse-item>
             <el-collapse-item>
               <template slot="title" name="2">
-                <div class="titlei">填空题 (共{{topicCount[1]}}题  共计{{score[1]}}分)</div>
+<!--                <div class="titlei">填空题 (共{{topicCount[1]}}题  共计{{score[1]}}分)</div>-->
+                <div class="titlei">填空题 (共{{topicCount[1]}}题)</div>
               </template>
               <div class="contenti">
                 <ul class="question" v-for="(list, index) in topic[2]" :key="index">
-                  <li>{{topicCount[0]+index+1}}.{{list.question}}  {{list.score}}分</li>
+<!--                  <li>{{topicCount[0]+index+1}}.{{list.question}}  {{list.score}}分</li>-->
+                  <li>{{topicCount[0]+index+1}}.{{list.question}} </li>
                 </ul>
               </div>
             </el-collapse-item>
             <el-collapse-item>
               <template slot="title" name="3">
-                <div class="titlei">判断题 (共{{topicCount[2]}}题 共计{{score[2]}}分)</div>
+<!--                <div class="titlei">判断题 (共{{topicCount[2]}}题 共计{{score[2]}}分)</div>-->
+                <div class="titlei">判断题 (共{{topicCount[2]}}题)</div>
               </template>
               <div class="contenti">
                 <ul class="question" v-for="(list, index) in topic[3]" :key="index">
-                  <li>{{topicCount[0]+topicCount[1]+index+1}}. {{list.question}} {{list.score}}分</li>
+<!--                  <li>{{topicCount[0]+topicCount[1]+index+1}}. {{list.question}} {{list.score}}分</li>-->
+                  <li>{{topicCount[0]+topicCount[1]+index+1}}. {{list.question}} </li>
                 </ul>
               </div>
             </el-collapse-item>
           </el-collapse>
         </el-collapse-item>
-        
+
       </el-collapse>
     </div>
     <!--考生须知对话框-->
@@ -201,7 +208,7 @@ export default {
   padding: 5px 10px;
   border: 1px solid #88949b;
   border-radius: 4px;
-} 
+}
 .wrapper .bottom {
   display: flex;
   margin-left: 20px;
@@ -249,6 +256,9 @@ export default {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   border: 1px solid #88949b;
+  position: inherit;
+  left: 91px;
+  top: -29px;
 }
 .wrapper .right .score {
   position: absolute;

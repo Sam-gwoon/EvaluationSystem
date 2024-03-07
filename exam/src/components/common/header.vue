@@ -3,8 +3,9 @@
   <header id="topbar">
     <el-row>
       <el-col :span="4" class="topbar-left">
-        <i class="iconfont icon-kaoshi"></i>
-        <span class="title" @click="index()">EVALUATING-SYSTEM</span>
+        <i class="iconfont icon-kaoshi1"></i>
+<!--        <span class="title" @click="index()">EVALUATING-SYSTEM</span>-->
+        <span class="title" @click="index()">AI人才知识能力评测系统</span>
       </el-col>
       <el-col :span="20" class="topbar-right">
         <i class="el-icon-menu" @click="toggle()"></i>
@@ -95,7 +96,7 @@ export default {
   background: rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
-.topbar-left .icon-kaoshi {
+.topbar-left .icon-kaoshi1 {
   font-size: 60px;
 }
 .topbar-left .title {

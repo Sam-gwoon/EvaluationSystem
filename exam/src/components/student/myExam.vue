@@ -1,12 +1,12 @@
-// 我的试卷页面
+// 我的评测页面
 <template>
   <div id="myExam">
     <div class="title">我的试卷</div>
     <div class="wrapper">
       <ul class="top">
-        <li class="order">试卷列表</li>
-        <li class="search-li"><div class="icon"><input type="text" placeholder="试卷名称" class="search" v-model="key"><i class="el-icon-search"></i></div></li>
-        <li><el-button type="primary" @click="search()">搜索试卷</el-button></li>
+        <li class="order">评测列表</li>
+        <li class="search-li"><div class="icon"><input type="text" placeholder="课程名称" class="search" v-model="key"><i class="el-icon-search"></i></div></li>
+        <li><el-button type="primary" @click="search()">搜索课程</el-button></li>
       </ul>
       <ul class="paper" v-loading="loading">
         <li class="item" v-for="(item,index) in pagination.records" :key="index">
@@ -15,7 +15,8 @@
           <div class="info">
             <i class="el-icon-loading"></i><span>{{item.examDate.substr(0,10)}}</span>
             <i class="iconfont icon-icon-time"></i><span v-if="item.totalTime != null">限时{{item.totalTime}}分钟</span>
-            <i class="iconfont icon-fenshu"></i><span>满分{{item.totalScore}}分</span>
+<!--            暂时不显示分数-->
+<!--            <i class="iconfont icon-fenshu"></i><span>满分{{item.totalScore}}分</span>-->
           </div>
         </li>
       </ul>
@@ -54,7 +55,7 @@ export default {
     this.loading = true
   },
   // watch: {
-    
+
   // },
   methods: {
     //获取当前所有考试信息

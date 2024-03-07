@@ -2,6 +2,8 @@
 
 > 在线考试系统-前端项目文件。
 
+### 系统架构
+
 ### 安装建议
 
 > 建议使用`yarn`来安装项目依赖，首先安装yarn，然后设置yarn源为淘宝镜像
@@ -28,6 +30,10 @@ yarn build or npm run build
 #清缓存
 npm cache clear --force
 
+```
+### 出错解决
+
+``` bash
 #注册表重置
 npm config set registry http://registry.npmjs.org/
 
@@ -42,3 +48,4 @@ npm config set 'https://registry.npmjs.org/'
 ③ 删除无用配置项
 yarn config delete 配置项名
 npm config delete 配置项名
+```
